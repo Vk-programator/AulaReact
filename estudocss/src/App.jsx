@@ -9,7 +9,7 @@ export default function App() {
    <div>
     <h1>Aula 02 - Estilo Css no React</h1>
     <Exercicio1 />
-    
+    <hr />
     <Exercicio2 />
 
    </div>
