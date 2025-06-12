@@ -1,7 +1,7 @@
 import Exercicio1 from "./Paginas/Exercicio1"
 import Exercicio2 from "./Paginas/Exercicio2"
-
-
+import Exemplo3 from "./Paginas/Exercicio3"
+import Exercicio4 from "./Paginas/Exercicio4"
 export default function App() {
 
 
@@ -11,7 +11,16 @@ export default function App() {
     <Exercicio1 />
     <hr />
     <Exercicio2 />
-
+    <hr />
+    <Exemplo3 />
+    <hr />
+    <Exercicio4  cor = "red"/>
+    <hr />
+    <Exercicio4  cor = "blue"/>
+    <hr />
+    <Exercicio4  cor = "violet"/>
+    <hr />
+    <Exercicio4  cor = "crimson"/>
    </div>
 
   )
