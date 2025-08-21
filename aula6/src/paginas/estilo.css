@@ -1,0 +1,27 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    background-color: #960000;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin: 0;
+}
+
+a{
+    color: blue;
+}
+
+.container{
+    width: 600px;
+    margin: 20px auto;
+    border: 1px solid #960000;
+    border-radius: 5px;
+}
+a:hover{
+    font-size: 20px;
+    color: purple;
+}
