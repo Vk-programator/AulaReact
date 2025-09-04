@@ -31,6 +31,7 @@ export default function Exemplo2(){
                         {resultado}
                     </p>
                 </form>
+                <li><Link to={"/"}>voltar</Link></li>
             </div>
         </div>
     )
