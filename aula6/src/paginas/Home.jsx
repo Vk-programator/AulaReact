@@ -12,6 +12,7 @@ export default function Home(){
             <li><Link to={"/exe3"}>Exercicio 3</Link></li>
             <li><Link to={"/exe4"}>Exercicio 4</Link></li>
             <li><Link to={"/exe5"}>Exercicio 5</Link></li>
+            <li><Link to={"/exe11"}>Exercicio 11</Link></li>
         </div>
     )
 }
