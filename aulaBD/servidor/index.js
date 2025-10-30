@@ -67,3 +67,28 @@ app.get("/aluno/codigo", (req,res) => {
    
 });
 
+app.post("/alunos", (req, res) => {
+    const{nome, cidade, estado} = req.body;
+    const sql = "insert into alunos(nome, cidade, estado) values (?,?,?)"
+
+    banco.query(sql, [nome, cidade, estado], (erro, result) =>{
+        if (erro){
+            console.log(erro);
+            return res.status(500).json({error: "Erro ao cadastrar aluno"});
+        } else {
+            let mensagem = `Aluno ${nome} cadastrado com sucesso com o codigo ${res}`;
+            console.log(mensagem);
+            return res.status(201).json({message: mensagem});
+        }
+    })
+
+});
+
+app.put("/alunos/:id", (req, res) => {
+
+});
+
+app.delete("/alunos/:id", (req, res) => {
+
+});
+
