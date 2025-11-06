@@ -85,10 +85,45 @@ app.post("/alunos", (req, res) => {
 });
 
 app.put("/alunos/:id", (req, res) => {
+    const {id} = req.params;
+    const {nome, cidade, estado} = req.body;
+
+    const sql = "UPDATE alunos SET nome = ?, cidade = ?, estado = ? WHERE codigo = ?";
+
+    banco.query(sql, [nome, cidade, estado, id], (erro, result) => {
+        if (erro){
+            console.log(erro);
+            return res.status(500).json({error: "Erro ao atualizar aluno"})
+        }
+
+        if (result.affectedRows === 0){
+            return res.status(400).json({message: "Aluno não encontrado"})
+        }
+
+        return res.status(200).json({ message: `Aluno com ID ${id} atualizado com sucesso`});
+
+    });
 
 });
 
 app.delete("/alunos/:id", (req, res) => {
+
+    const { id } = req.params;
+
+    const sql = "DELETE FROM alunos WHERE codigo = ?"
+
+    banco.query(sql, [id], (erro, result) => {
+        if (erro) {
+            console.log(erro);
+            return res.status(500).json({error: "Erro ao excluir aluno"});
+        }
+
+        if (result.affectedRows === 0){
+            return res.status(404).json({message: "Aluno não encontrado"});
+        }
+
+        return res.status(200).json({message: `Aluno com ID ${id} excluido com sucesso`});
+    })
 
 });
 
