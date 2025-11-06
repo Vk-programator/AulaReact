@@ -6,6 +6,9 @@ function consultar()
         console.log("Alunos:", data);
         document.getElementById("resultado").innerHTML = JSON.stringify(data, null, 2);
     })
+    .catch(err => {
+        document.getElementById("resultado").innerHTML = "Erro ao obter dados do API !";
+    })
 }
 
 function consultarPorCodigo()

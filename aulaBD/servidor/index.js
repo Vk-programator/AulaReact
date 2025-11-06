@@ -27,10 +27,10 @@ banco.connect( (erro) => {
 });
 
 app.listen(port, () => {
-    console.log("Servidor rodando em http//localhost:" + port);
+    console.log("Servidor rodando em http://localhost:" + port);
 });
 
-app.get("/aluno", (req, res) =>{
+app.get("/alunos", (req, res) =>{
     const sql = "SELECT * from aluno";
 
     banco.query(sql,(erro,resultados) => {
@@ -46,7 +46,7 @@ app.get("/aluno", (req, res) =>{
     });
 });
 
-app.get("/aluno/codigo", (req,res) => {
+app.get("/alunos/:codigo", (req,res) => {
     const {codigo} = req.params;
 
     const sql = "SELECT * from aluno WHERE codigo = ?";
