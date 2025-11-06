@@ -1,6 +1,11 @@
 function consultar()
 {
-
+    fetch("http://localhost:3001/alunos")
+    .then(res => res.json())
+    .then(data => {
+        console.log("Alunos:", data);
+        document.getElementById("resultado").innerHTML = JSON.stringify(data, null, 2);
+    })
 }
 
 function consultarPorCodigo()
@@ -20,5 +25,5 @@ function  alterar()
 
 function excluir()
 {
-    
+
 }
